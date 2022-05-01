@@ -1,5 +1,5 @@
 #CupomTop{
-    height: calc(350px - 50px);
+    height: calc(350px);
     background-image: url('../img/familiaFeliz.jpg');
     background-repeat: no-repeat;
     background-size: cover;
@@ -15,7 +15,7 @@
 }
 .spanYellow {
     color:#f39200;
-    font-size: 60px;
+    font-size: 50px;
 }
 .marginLeft{
     margin-left: 100px;
@@ -39,7 +39,7 @@
     font-size: 20px;
     color:#f39200;
 }
-@media only screen and (max-width: 1000px) {
+@media only screen and (max-width: 1090px) {
     #InfoCupomMainTittle h1, #InfoCupom{
         padding: 15px;
         font-size: 18px;
@@ -101,7 +101,7 @@
         font-size: 25px;
     }
     .spanYellow{
-        font-size: 25px;
+        font-size: 23px;
     }
 }
 @media only screen and (max-width: 350px) {

@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Brisamar - Candeias</title>
+    <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/header.css">
     <link rel="stylesheet" href="css/slider.css">
@@ -20,6 +21,95 @@
         html {
             scroll-behavior: smooth;
         }
+
+        .BlocoHotel{
+            width: fit-content;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 300px;
+        }
+
+        .BlocoHotelDesc{
+            width: 300px;
+            font-size: 15px;
+            width: fit-content;
+            padding: 10px;
+            display: flex;
+            background-color: #173c77;
+            transform: translateY(-20px);
+            color: white;
+            border-radius: 5px;
+            transition: 200ms;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            box-shadow: 0px 0px 5px rgb(148, 148, 148);
+        }
+
+        .BlocoHotelDesc:hover{
+            transform: translateY(-30px);
+        }
+
+        .BlocoHotelDesc span{
+            margin-left: 10px;
+            color: #f39200;
+        }
+
+        .BlocoHotelPhoto{
+            width: 300px;
+            height: 150px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .BlocoHotelPhoto img{
+            
+            object-fit: contain;
+            height: 100%;
+            border-radius: 5px;
+            box-shadow: 0px 0px 5px rgb(148, 148, 148);
+            transition: 200ms;
+            
+        }
+        .BlocoHotelPhoto img:hover{
+            transform: scale(1.4);
+        }
+
+        .skew{
+            transform: skew(7deg, 0deg);
+        }
+
+        .flexWrap{
+            flex-wrap: wrap;
+        }
+        .Aviso{
+            font-size: 14px;
+            width:100%;
+            padding-left: 80px;
+            padding-right: 80px;
+        }
+        .linha{
+            width: 100%;
+            display: flex;
+            justify-content: space-around;
+            
+        }
+        @media only screen and (max-width: 950px) {
+            .BlocoHotel{
+                margin: 0px;
+            }
+            
+            
+        }
+        @media only screen and (max-width: 800px) {
+            .linha{
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+        
     </style>
 </head>
 <body>
@@ -33,7 +123,7 @@
         </ul>
     </header>
 
-    <div class="section center" >
+    <!-- <div class="section center borderRed" >
         <div
          class="sliderContainer "
          id="sliderContainer"
@@ -55,12 +145,186 @@
             <div class="setaCenter">
                 <div class="seta" id="next">
                     <ion-icon name="chevron-forward-outline"></ion-icon>
-                </div>
+                </div>s
             </div>
             
+        </div> 
+    </div> -->
+    
+    <div class="row">
+        <h1 class="sectionTittle">Algumas das nossas unidades</h1>
+    </div> 
+    <div class="section p-10 flex flexWrap">
+         
+        <div class="linha ">
+            <div class="BlocoHotel">
+                <div class="BlocoHotelPhoto ">
+                    <img src="img/resorts/resorts2/ubatuba.jpg" alt="Candeias Ubatuba">
+                </div>
+                <div class="BlocoHotelDesc ">
+                    <div>
+                        Candeias Ubatuba <br>
+                        Ubatuba/SP
+                    </div>
+                    <span>R$ 37,83</span>
+                </div>
+            </div>
+
+            <div class="BlocoHotel ">
+                <div class="BlocoHotelPhoto ">
+                    <img src="img/resorts/resorts2/guaratuba.jpg" alt="Candeias Guaratuba">
+                </div>
+                <div class="BlocoHotelDesc ">
+                    <div>
+                        Candeias Guaratuba <br>
+                        Guaratuba/PR
+                    </div>
+                    <span>R$ 49,16</span>
+                </div>
+            </div>
+
+            <div class="BlocoHotel">
+                <div class="BlocoHotelPhoto ">
+                    <img src="img/resorts/resorts2/caioba.jpg" alt="Candeias Caiobá">
+                </div>
+                <div class="BlocoHotelDesc ">
+                    <div>
+                        Candeias Caiobá <br>
+                        Caiobá/PR
+                    </div>
+                    <span>R$ 26,62</span>
+                </div>
+            </div>
+        </div> 
+
+        <div class="linha ">
+            <div class="BlocoHotel">
+                <div class="BlocoHotelPhoto ">
+                    <img src="img/resorts/resorts2/complexo_turistico.jpg" alt="Candeias Complexo Turístico">
+                </div>
+                <div class="BlocoHotelDesc ">
+                    <div>
+                        Candeias Complexo Turístico <br>
+                        Bal. Camburiú/SC
+                    </div>
+                    <span>R$ 25,37</span>
+                </div>
+            </div>
+
+            <div class="BlocoHotel ">
+                <div class="BlocoHotelPhoto ">
+                    <img src="img/resorts/resorts2/ilhasGregas.jpg" alt="Candeias Ed. Ilhas Gregas">
+                </div>
+                <div class="BlocoHotelDesc ">
+                    <div>
+                        Candeias Ed. Ilhas Gregas <br>
+                        Bal. Camburiú/SC
+                    </div>
+                    <span>R$ 35,70</span>
+                </div>
+            </div>
+
+            <div class="BlocoHotel">
+                <div class="BlocoHotelPhoto ">
+                    <img src="img/resorts/resorts2/Sol.jpg" alt="Candeias Village do Sol">
+                </div>
+                <div class="BlocoHotelDesc ">
+                    <div>
+                        Candeias Village do Sol <br>
+                        Natal/RN
+                    </div>
+                    <span>R$ 52,75</span>
+                </div>
+            </div>
+        </div> 
+
+        <div class="linha ">
+            <div class="BlocoHotel">
+                <div class="BlocoHotelPhoto ">
+                    <img src="img/resorts/resorts2/goldFish.jpg" alt="Candeias Gold Fish">
+                </div>
+                <div class="BlocoHotelDesc ">
+                    <div>
+                        Candeias Gold Fish <br>
+                        Corumbá/MS
+                    </div>
+                    <span>R$ 41,25</span>
+                </div>
+            </div>
+
+            <div class="BlocoHotel ">
+                <div class="BlocoHotelPhoto ">
+                    <img src="img/resorts/resorts2/guarany.jpg" alt="Candeias Guarany">
+                </div>
+                <div class="BlocoHotelDesc ">
+                    <div>
+                        Candeias Guarany <br>
+                        Bonito/MS
+                    </div>
+                    <span>R$ 47,25</span>
+                </div>
+            </div>
+
+            <div class="BlocoHotel">
+                <div class="BlocoHotelPhoto ">
+                    <img src="img/resorts/resorts2/costaVerde.jpg" alt="Candeias Costa Verde">
+                </div>
+                <div class="BlocoHotelDesc ">
+                    <div>
+                        Candeias Costa Verde <br>
+                        Bombinhas/SC
+                    </div>
+                    <span>R$ 59,00</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="linha ">
+            <div class="BlocoHotel">
+                <div class="BlocoHotelPhoto ">
+                    <img src="img/resorts/resorts2/foz.jpg" alt="Candeias Foz">
+                </div>
+                <div class="BlocoHotelDesc ">
+                    <div>
+                        Candeias Foz <br>
+                        Foz do Iguaçu/PR
+                    </div>
+                    <span>R$ 50,50</span>
+                </div>
+            </div>
+
+            <div class="BlocoHotel ">
+                <div class="BlocoHotelPhoto ">
+                    <img src="img/resorts/resorts2/piçarras.jpg" alt="Candeias Piçarras">
+                </div>
+                <div class="BlocoHotelDesc ">
+                    <div>
+                        Candeias Piçarras <br>
+                        Bal. Piçarras/SC
+                    </div>
+                    <span>R$ 27,50</span>
+                </div>
+            </div>
+
+            <div class="BlocoHotel">
+                <div class="BlocoHotelPhoto ">
+                    <img src="img/resorts/resorts2/paradorCachoeira.jpg" alt="Candeias Parador da Cachoeira">
+                </div>
+                <div class="BlocoHotelDesc ">
+                    <div>
+                        Candeias Parador da Cachoeira <br>
+                        Florianópolis/SC
+                    </div>
+                    <span>R$ 61,75</span>
+                </div>
+            </div>
+        </div>    
+        
+        <div class="linha ">
+            <p class="Aviso"> * Preço por pessoas, ocupação pela capacidade total do aposento. Válido para uso em baixa temporada 2022, exceto em feriados e eventos. Os valores estão sujeitos a alteração sem prévio aviso</p>
         </div>
     </div>
-
+    
     
 
     <div class="section blueBackground">
@@ -85,7 +349,8 @@
             <img src="/img/whatsapp.png" alt="41 3557-1982 " style="width: 100px;">
         </div>     
         </a>      
-    </div>    
+    </div>  
+
     <div class="section " id="Localização">
         <iframe  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3602.8991529921523!2d-49.21479818498554!3d-25.441634883783117!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94dce56567f98425%3A0xf636ae0329fa2047!2sCandeias!5e0!3m2!1spt-BR!2sbr!4v1649812876142!5m2!1spt-BR!2sbr" width="100%" height="600px" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
     </div>
@@ -95,6 +360,9 @@
         <a target='blank' href="##"></a><img src="/img/facebook.png" class="SocialMedia"></a>
     </div>
 
+    <div class="section " id="formulario">
+
+    </div>
 
     <div class="section margin flexCenterCenter">
         <img src="/img/clubeCandeias.svg" width="80%" alt="">
@@ -104,4 +372,5 @@
 <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
 <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 <script src="/js/slider.js"></script>
+<script src="/js/bootstrap.bundle.js"></script>
 </html>
