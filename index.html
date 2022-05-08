@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="css/header.css">
     <link rel="stylesheet" href="css/slider.css">
     <link rel="stylesheet" href="css/cupom.css">
+    <link rel="stylesheet" href="css/formulario.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@200&display=swap" rel="stylesheet">
@@ -113,6 +114,107 @@
     </style>
 </head>
 <body>
+    <div class="FORMULARIO ESCONDIDO" id="form">
+        <div class="FORMULARIO_FLEX">
+            <form action="https://apibrisamar.herokuapp.com/brisamar/" method="post">
+                <div class="fechar">Fechar</div>
+                <h1>Promoção 2 dias com o candeias</h1>
+                <div class="labelGroup">
+                    <label for="nome" class="labelMaior">
+                        <span>Nome completo</span> 
+                        <input type="text" required name="nome">
+                    </label>
+                    <label for="idade" class="labelNormal">
+                        <span>Idade</span> 
+                        <input type="number" required name="idade">
+                    </label>
+                </div>
+                
+                <div class="labelGroup">
+                    <label for="tel" class="labelNormal">
+                        <span>Telefone</span> 
+                        <input type="text" required onkeypress="mask(this, mphone);"   name="tel">
+                    </label>
+                    <label for="email" class="labelMaior">
+                        <span>Email</span> 
+                        <input type="email" required pattern="[^@ \t\r\n]+@[^@ \t\r\n]+\.[^@ \t\r\n]+"  name="email">
+                    </label>
+                </div>
+                
+                <!-- <div class="labelGroup">
+                    <label for="endereco" class="labelMaior">
+                        <span>Rua</span> 
+                        <input type="text" name="endereco">
+                    </label>
+                    
+                    <label for="bairro" class="labelMaior">
+                        <span>Bairro</span> 
+                        <input type="text" name="bairro">
+                    </label>
+
+                    <label for="numero" class="labelNormal">
+                        <span>Número</span> 
+                        <input type="text" name="numero">
+                    </label>
+                </div> -->
+                <div class="labelGroup">
+                    <label for="estado" class="labelNormal">
+                        <span>Estado</span> 
+                        <select type="text" required name="estado">
+                            <option value="AC">AC</option>
+                            <option value="AL">AL</option>
+                            <option value="AP">AP</option>
+                            <option value="AM">AM</option>
+                            <option value="BA">BA</option>
+                            <option value="CE">CE</option>
+                            <option value="DF">DF</option>
+                            <option value="ES">ES</option>
+                            <option value="GO">GO</option>
+                            <option value="MA">MA</option>
+                            <option value="MT">MT</option>
+                            <option value="MS">MS</option>
+                            <option value="MG">MG</option>
+                            <option value="PA">PA</option>
+                            <option value="PB">PB</option>
+                            <option value="PR">PR</option>
+                            <option value="PE">PE</option>
+                            <option value="PI">PI</option>
+                            <option value="RJ">RJ</option>
+                            <option value="RN">RN</option>
+                            <option value="RS">RS</option>
+                            <option value="RO">RO</option>
+                            <option value="RR">RR</option>
+                            <option value="SC">SC</option>
+                            <option value="SP">SP</option>
+                            <option value="SE">SE</option>
+                            <option value="TO">TO</option>
+
+                        </select>
+                    </label>
+                    <label for="cidade" class="labelMaior">
+                        <span>Cidade</span> 
+                        <input type="text" required name="cidade">
+                    </label>
+                </div>
+                
+                <label for="associado">
+                    <span>Associado</span> 
+                    <select name="associado" required id="">
+                        <option value="Sim">Sim</option>
+                        <option value="Não">Não</option>
+                    </select>
+                </label>
+                <p>
+                    O consumidor está ciente e consente quanto ao tratamento de seus dados pessoais, conforme previsão da Politica de Privacidade e Proteção de Dados Pessoais, em atenção à Lei 13.709/2018 (alterada pela Lei 13.853/2019). Neste ato o consumidor concede, expressa e gratuitamente, o direito de compartilhamento de seus dados pessoais a brisamar - Concessionária Autorizada Candeias para fins de relacionamento comercial, oferecimento de produtos, serviços e promoções.
+                </p>
+                <div class="buttonsGroup">
+                    <button type="submit" class="btn btn-success">Enviar</button>
+                    <div id="fechar" class="btn btn-danger">Fechar</div>
+                </div>
+                
+            </form>
+        </div>
+    </div>
      
     <header class="">
         <img class="logo" src="/img/brisamar candeias.png" alt="">
@@ -373,4 +475,54 @@
 <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 <script src="/js/slider.js"></script>
 <script src="/js/bootstrap.bundle.js"></script>
+<script>
+    function mask(o, f) {
+
+        setTimeout(function() {
+
+            var v = mphone(o.value);
+
+            if (v != o.value) {
+                o.value = v;
+            }
+
+        }, 1);
+    }
+
+    function mphone(v) {
+        var r = v.replace(/\D/g, "");
+        r = r.replace(/^0/, "");
+
+        if (r.length > 10) {
+            r = r.replace(/^(\d\d)(\d{5})(\d{4}).*/, "($1) $2-$3");
+        } else if (r.length > 5) {
+            r = r.replace(/^(\d\d)(\d{4})(\d{0,4}).*/, "($1) $2-$3");
+        } else if (r.length > 2) {
+            r = r.replace(/^(\d\d)(\d{0,5})/, "($1) $2");
+        } else {
+            r = r.replace(/^(\d*)/, "($1");
+        }
+        return r;
+    }
+
+
+    const formContainer = document.getElementById('form') 
+    const blocosHotel = [... document.getElementsByClassName('BlocoHotel')]
+    blocosHotel.forEach( bloco => {
+        bloco.addEventListener('click',handleForm)
+    })
+
+    document.getElementById('fechar').addEventListener('click', ()=>{
+        formContainer.classList.remove('MOSTRADO')
+        formContainer.classList.add('ESCONDIDO')
+    })
+
+    function handleForm(){
+        let classList = formContainer.classList
+
+        formContainer.classList.remove('ESCONDIDO')
+        formContainer.classList.add('MOSTRADO')
+        
+    }
+</script>
 </html>
