@@ -117,27 +117,27 @@
     <div class="FORMULARIO ESCONDIDO" id="form">
         <div class="FORMULARIO_FLEX">
             <form action="https://apibrisamar.herokuapp.com/brisamar/" method="post">
-                <div class="fechar">Fechar</div>
+                
                 <h1>Promoção 2 dias com o candeias</h1>
                 <div class="labelGroup">
                     <label for="nome" class="labelMaior">
                         <span>Nome completo</span> 
-                        <input type="text" required name="nome">
+                        <input type="text" required placeholder="Digite o seu nome completo" name="nome">
                     </label>
                     <label for="idade" class="labelNormal">
                         <span>Idade</span> 
-                        <input type="number" required name="idade">
+                        <input type="number" placeholder="Digite a sua idade" required name="idade">
                     </label>
                 </div>
                 
                 <div class="labelGroup">
                     <label for="tel" class="labelNormal">
                         <span>Telefone</span> 
-                        <input type="text" required onkeypress="mask(this, mphone);"   name="tel">
+                        <input type="text" required placeholder="Digite o seu telefone" onkeypress="mask(this, mphone);"   name="tel">
                     </label>
                     <label for="email" class="labelMaior">
                         <span>Email</span> 
-                        <input type="email" required pattern="[^@ \t\r\n]+@[^@ \t\r\n]+\.[^@ \t\r\n]+"  name="email">
+                        <input type="email" placeholder="Digite o seu email" required pattern="[^@ \t\r\n]+@[^@ \t\r\n]+\.[^@ \t\r\n]+"  name="email">
                     </label>
                 </div>
                 
@@ -176,7 +176,7 @@
                             <option value="MG">MG</option>
                             <option value="PA">PA</option>
                             <option value="PB">PB</option>
-                            <option value="PR">PR</option>
+                            <option value="PR" selected>PR</option>
                             <option value="PE">PE</option>
                             <option value="PI">PI</option>
                             <option value="RJ">RJ</option>
@@ -193,13 +193,13 @@
                     </label>
                     <label for="cidade" class="labelMaior">
                         <span>Cidade</span> 
-                        <input type="text" required name="cidade">
+                        <input type="text" placeholder="Digite a sua cidade" required name="cidade">
                     </label>
                 </div>
                 
                 <label for="associado">
                     <span>Associado</span> 
-                    <select name="associado" required id="">
+                    <select name="assossiado" required id="">
                         <option value="Sim">Sim</option>
                         <option value="Não">Não</option>
                     </select>
@@ -208,8 +208,8 @@
                     O consumidor está ciente e consente quanto ao tratamento de seus dados pessoais, conforme previsão da Politica de Privacidade e Proteção de Dados Pessoais, em atenção à Lei 13.709/2018 (alterada pela Lei 13.853/2019). Neste ato o consumidor concede, expressa e gratuitamente, o direito de compartilhamento de seus dados pessoais a brisamar - Concessionária Autorizada Candeias para fins de relacionamento comercial, oferecimento de produtos, serviços e promoções.
                 </p>
                 <div class="buttonsGroup">
-                    <button type="submit" class="btn btn-success">Enviar</button>
-                    <div id="fechar" class="btn btn-danger">Fechar</div>
+                    <button type="submit" class="btn btn-success">Inscrever-se</button>
+                    <div id="fechar" class="btn btn-danger">Cancelar</div>
                 </div>
                 
             </form>
@@ -222,8 +222,29 @@
             <li><a href="#fale_conosco">Agendar visita</a> </li>
             <li><a href="#contatos">Contatos</a> </li>
             <li><a href="#Localização">Localização</a> </li>
+            <li class="concorrer_a_promocao">Concorrer a promoção </li>
         </ul>
+
+        
+        
     </header>
+
+    <section class="headerMobile">
+        <div class="growSection">
+            <ul id="growSectionUl">
+                <li><a href="#fale_conosco">Agendar visita</a> </li>
+                <li><a href="#contatos">Contatos</a> </li>
+                <li><a href="#Localização">Localização</a> </li>
+                <li class="concorrer_a_promocao">Concorrer a promoção </li>
+            </ul>
+        </div>
+        <button id="hamburguer">
+            <span class="line"></span>
+            <span class="line"></span>
+            <span class="line"></span>
+        </button>
+    </section>
+    
 
     <!-- <div class="section center borderRed" >
         <div
@@ -426,8 +447,6 @@
             <p class="Aviso"> * Preço por pessoas, ocupação pela capacidade total do aposento. Válido para uso em baixa temporada 2022, exceto em feriados e eventos. Os valores estão sujeitos a alteração sem prévio aviso</p>
         </div>
     </div>
-    
-    
 
     <div class="section blueBackground">
         <div id="CupomTop" class="">
@@ -505,6 +524,11 @@
         return r;
     }
 
+    const handleForm = () => {
+        let classList = formContainer.classList
+        formContainer.classList.remove('ESCONDIDO')
+        formContainer.classList.add('MOSTRADO')
+    }
 
     const formContainer = document.getElementById('form') 
     const blocosHotel = [... document.getElementsByClassName('BlocoHotel')]
@@ -512,17 +536,29 @@
         bloco.addEventListener('click',handleForm)
     })
 
+    const botoesConcorrer = [... document.getElementsByClassName('concorrer_a_promocao')]
+    
+    botoesConcorrer.forEach( el=>{
+        el.addEventListener('click', handleForm)
+    })
+
+
     document.getElementById('fechar').addEventListener('click', ()=>{
         formContainer.classList.remove('MOSTRADO')
         formContainer.classList.add('ESCONDIDO')
-    })
+    })    
 
-    function handleForm(){
-        let classList = formContainer.classList
+    const hamburguerMenu = document.querySelector('#hamburguer')
+    const menuIsActive = () => {
+        hamburguerMenu.classList.toggle('active')
 
-        formContainer.classList.remove('ESCONDIDO')
-        formContainer.classList.add('MOSTRADO')
-        
+        let grow = document.querySelector('.growSection')
+            grow.classList.toggle('active')
+
+        let growUl = document.querySelector('#growSectionUl')
+            growUl.classList.toggle('active')
+
     }
+    hamburguerMenu.addEventListener('click', menuIsActive)
 </script>
 </html>
