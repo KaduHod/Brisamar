@@ -39,6 +39,10 @@
     font-size: 20px;
     color:#f39200;
 }
+
+.headerMobile{
+    transform: translateY(-400px);
+}
 @media only screen and (max-width: 1090px) {
     #InfoCupomMainTittle h1, #InfoCupom{
         padding: 15px;
@@ -70,6 +74,7 @@
     header {
         display: none;
     }
+    
     .headerMobile{
         display: flex;
         flex-direction: column;
@@ -79,6 +84,7 @@
         align-items: center;    
         background-color: #f39200;
         margin-bottom: 15px;
+        transform: translateY(0px);
     }
     
     .section{
