@@ -93,6 +93,9 @@
 .buttonsGroup button{
     margin: 0px 10px;
 }
+.headerMobile{
+    display: none;
+}
 #hamburguer{
     background: transparent;
     border: none;
