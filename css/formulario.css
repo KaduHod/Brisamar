@@ -9,8 +9,8 @@
 }
 .MOSTRADO{
     display: block;
-    transform: translateY(-900px);
-    animation: show 600ms cubic-bezier(0.175, 0.885, 0.32, 1.1) 00ms forwards;
+    transform: translateY(-100px);
+    animation: show 200ms cubic-bezier(0.175, 0.885, 0.32, 1.1) 00ms forwards;
     
 }
 
@@ -112,7 +112,7 @@
 .growSection{
     height: 0px;
     transform: translateY(-101%);
-    transition: 200ms cubic-bezier(0.95, 0.05, 0.795, 0.035);
+    transition: 100ms cubic-bezier(0.95, 0.05, 0.795, 1.15);
 }
 .growSection.active{
     height: 270px;
@@ -127,7 +127,7 @@
     flex-direction: column;
     align-items: center;
     list-style: none;
-    transition: 200ms cubic-bezier(0.95, 0.05, 0.795, 0.035);
+    transition: 140ms cubic-bezier(0.95, 0.05, 0.795, 0.1);
     transform: translateY(-101%);
     padding: 0;
     margin: 0;
